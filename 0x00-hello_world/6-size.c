@@ -8,8 +8,11 @@
 
 int main(void)
 {
-typedef int d;
-d ch = sizeof(char), in = sizeof(int), li = sizeof(long), lli = sizeof(long long), f = sizeof(float);
+int ch = sizeof(char);
+int  in = sizeof(int);
+int li = sizeof(long);
+int lli = sizeof(long long);
+int f = sizeof(float);
 printf("Size of a char: %d byte(s)\n", ch);
 printf("Size of a int: %d byte(s)\n", in);
 printf("Size of a long int: %d byte(s)\n", li);
