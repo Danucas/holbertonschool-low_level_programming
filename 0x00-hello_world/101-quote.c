@@ -1,13 +1,11 @@
-#include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 /**
 *main - this file prints a lot of things
 *Return: 1 for error
 */
 int main(void)
 {
-char *text = ("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
-write(2, text, strlen(text));
+char a[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+write(2, a, sizeof(a) - 1);
 return (1);
 }
