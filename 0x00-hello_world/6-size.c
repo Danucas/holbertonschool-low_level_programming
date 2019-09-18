@@ -1,8 +1,11 @@
 #include <stdio.h>
 /**
 *main - something
+*
 *Return: something
+*
 */
+
 int main(void)
 {
 printf("Size of a char: %lu byte(s)\n", sizeof(char));
