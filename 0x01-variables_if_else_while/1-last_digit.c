@@ -14,10 +14,6 @@ char *tail;
 srand(time(0));
 n = rand() - RAND_MAX / 2;
 compn = n % 10;
-if (compn < 0)
-{
-compn *= -1;
-}
 if (n > 5)
 {
 tail = "and is grater than 5";
