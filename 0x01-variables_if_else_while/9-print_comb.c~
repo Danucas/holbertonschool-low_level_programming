@@ -7,19 +7,21 @@
  */
 int main(void)
 {
-int i = 0;
-while (i < 16)
+int x;
+int y;
+for (x = 0; x < 10; x++)
 {
-if (i > 9)
+for (y = 0; y < 10; y++)
 {
-putchar(i + 87);
-}
-else
+putchar('0' + x );
+putchar('0' + y );
+if (x < 10 && y < 9)
 {
-putchar(i + '0');
+putchar(',');
+putchar(' ');
 }
-i++;
 }
-putchar('\n');
+}
+
 return (0);
 }
