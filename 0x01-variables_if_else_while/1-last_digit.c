@@ -16,7 +16,7 @@ n = rand() - RAND_MAX / 2;
 compn = n % 10;
 if (compn > 5)
 {
-tail = "and is grater than 5";
+tail = "and is greater than 5";
 }
 else if (compn == 0)
 {
