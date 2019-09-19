@@ -8,15 +8,23 @@
 int main(void)
 {
 int x;
+int y;
 for (x = 0; x < 10; x++)
 {
+for (y = 0; y < 10; y++)
+{
 putchar('0' + x);
-if (x != 9)
+putchar('0' + y);
+if (x == 9 && y == 9)
+{
+}
+else
 {
 int f;
-for (f = 44; f >= 32; f -= 12)
+for (f = 32; f <= 44; f += 12)
 {
 putchar(f);
+}
 }
 }
 }
