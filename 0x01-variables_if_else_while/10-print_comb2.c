@@ -21,7 +21,7 @@ if (x == 9 && y == 9)
 else
 {
 int f;
-for (f = 32; f <= 44; f += 12)
+for (f = 44; f >= 32; f -= 12)
 {
 putchar(f);
 }
