@@ -15,13 +15,19 @@ for (y = 0; y < 10; y++)
 {
 putchar('0' + x);
 putchar('0' + y);
-if (x < 10 && y < 9)
+if (x == 9 && y == 9)
 {
-putchar(',');
-putchar(' ');
+}
+else
+{
+int f;
+for (f = 32; f <= 44; f += 12)
+{
+putchar(f);
 }
 }
 }
-
+}
+putchar('\n');
 return (0);
 }
