@@ -14,11 +14,11 @@ char *tail;
 srand(time(0));
 n = rand() - RAND_MAX / 2;
 compn = n % 10;
-if (n > 5)
+if (compn > 5)
 {
 tail = "and is grater than 5";
 }
-else if (n < 5 && n != 0)
+else if (compn < 5 && compn != 0)
 {
 tail = "and is less than 6 and not 0";
 }
