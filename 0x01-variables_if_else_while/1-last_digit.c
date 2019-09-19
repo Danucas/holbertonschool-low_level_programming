@@ -18,13 +18,13 @@ if (compn > 5)
 {
 tail = "and is grater than 5";
 }
-else if (compn < 5 && compn != 0)
+else if (compn == 0)
 {
-tail = "and is less than 6 and not 0";
+tail = "and is 0";
 }
 else
 {
-tail = "and is 0";
+tail = "and is less than 6 and not 0";
 }
 printf("%s %d is %d %s\n", head, n, compn, tail);
 return (0);
