@@ -7,19 +7,11 @@
 int print_last_digit(int c)
 {
 int result;
-if (c < 0)
-{
-c *= -1;
-}
-if (c > 0)
-{
 result = c % 10;
-}
-else
+if (result < 0)
 {
-result = 0;
+result *= -1;
 }
-
 _putchar(result + '0');
 return (result % 10);
 }
