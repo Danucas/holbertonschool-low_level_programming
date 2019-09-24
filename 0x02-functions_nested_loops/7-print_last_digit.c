@@ -11,5 +11,5 @@ if (c < 0)
 c *= -1;
 }
 _putchar((c % 10) + '0');
- return ((int) c % 10);
+return (c % 10);
 }
