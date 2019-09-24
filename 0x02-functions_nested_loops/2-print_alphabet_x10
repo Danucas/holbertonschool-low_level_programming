@@ -1,0 +1,26 @@
+#include "holberton.h"
+/**
+  *print_alphabet_x10 - it prints alphabet
+ */
+void print_alphabet_x10(void)
+{
+int ch;
+for (ch = 97; ch < 123; ch++)
+{
+_putchar(ch);
+}
+_putchar('\n');
+}
+/**
+ *main - main
+ *Return: 0 if fine
+ */
+int main(void)
+{
+int p;
+for (p = 0; p < 10; p++)
+{
+print_alphabet_x10();
+}
+return (0);
+}
