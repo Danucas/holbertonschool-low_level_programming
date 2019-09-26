@@ -15,18 +15,23 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		n *= -1;
 		head *= -1;
 		_putchar(45);
 	}
-	for (pos = 0; pos < count; pos++)
+	if (n == 0)
 	{
-		d = head / div;
-		head = head % div;
-		div /= 10;
-		_putchar(d + '0');
+		_putchar('0');
 	}
-
+	else
+	{
+		for (pos = 0; pos < count; pos++)
+		{
+			d = head / div;
+			head = head % div;
+			div /= 10;
+			_putchar(d + '0');
+		}
+	}
 }
 /**
  *get_digits_count - get legth
