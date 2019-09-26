@@ -1,6 +1,6 @@
 #include "holberton.h"
-#include <stdbool.h>
 int get_digits_count(int head);
+int powd(int a, int b);
 /**
  *print_number - print numbers with char
  *@n: int to print
@@ -10,38 +10,23 @@ void print_number(int n)
 	int head = n;
 	int count = get_digits_count(head);
 	int pos;
+	int div = powd(10, count - 2);
 	int d;
-	int repos;
-	bool is_neg;
 
 	if (n < 0)
 	{
-		count++;
+		n *= -1;
 		head *= -1;
-		is_neg = true;
+		_putchar(45);
+	}
+	for (pos = 0; pos < count; pos++)
+	{
+		d = head / div;
+		head = head % div;
+		div /= 10;
+		_putchar(d + '0');
 	}
 
-	for (pos = 0; pos < count; pos++)
-	{
-		_putchar('0');
-	}
-	for (pos = 0; pos < count; pos++)
-	{
-		d  = head % 10;
-		head = head / 10;
-		for (repos = 1; repos < pos + 2; repos++)
-		{
-			_putchar('\b');
-		}
-		if (is_neg && pos == count - 1)
-		{
-			_putchar(45);
-		}
-		else
-		{
-			_putchar('0' + d);
-		}
-	}
 }
 /**
  *get_digits_count - get legth
@@ -58,4 +43,21 @@ int get_digits_count(int head)
 		digitscount++;
 	}
 	return (digitscount);
+}
+/**
+ *powd - do something
+ *Return: powed
+ *@a: dsa
+ *@b: dsa
+ */
+int powd(int a, int b)
+{
+	int p;
+	int n = a;
+
+	for (p = 0; p < b; p++)
+	{
+		a *= n;
+	}
+	return (a);
 }
