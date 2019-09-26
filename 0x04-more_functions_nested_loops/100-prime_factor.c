@@ -18,7 +18,6 @@ void get_prime_numbers(long a)
 	{
 		while (a % pos == 0)
 		{
-			printf("%d ", pos);
 			a = a / pos;
 		}
 	}
