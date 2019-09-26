@@ -1,9 +1,9 @@
 #include "holberton.h"
 #include <stdbool.h>
-#include <stdio.h>
 int get_digits_count(int head);
 /**
  *print_number - print numbers with char
+ *@n: int to print
  */
 void print_number(int n)
 {
@@ -42,12 +42,12 @@ void print_number(int n)
 			_putchar('0' + d);
 		}
 	}
-	if (is_neg)
-	{
-		printf("is negative");
-	}
 }
-
+/**
+ *get_digits_count - get legth
+ *@head: int to get
+ *Return: length
+ */
 int get_digits_count(int head)
 {
 	int digitscount = 1;
