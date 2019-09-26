@@ -10,7 +10,7 @@ void print_number(int n)
 	int head = n;
 	int count = get_digits_count(head);
 	int pos;
-	int div = powd(10, count - 2);
+	int div = powd(10, count >= 2 ? count - 2 : 1);
 	int d;
 
 	if (n < 0)
@@ -21,6 +21,10 @@ void print_number(int n)
 	if (n == 0)
 	{
 		_putchar('0');
+	}
+	else if (head < 9)
+	{
+		_putchar('0' + n);
 	}
 	else
 	{
