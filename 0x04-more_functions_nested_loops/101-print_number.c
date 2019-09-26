@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdlib.h>
 int get_digits_count(int head);
 int powd(int a, int b);
 /**
@@ -15,16 +16,15 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		head *= -1;
 		_putchar(45);
 	}
 	if (n == 0)
 	{
 		_putchar('0');
 	}
-	else if (head < 9)
+	else if (head < 9 && head > 0)
 	{
-		_putchar('0' + n);
+		_putchar('0' + abs(n));
 	}
 	else
 	{
@@ -33,7 +33,7 @@ void print_number(int n)
 			d = head / div;
 			head = head % div;
 			div /= 10;
-			_putchar(d + '0');
+			_putchar(abs(d) + '0');
 		}
 	}
 }
