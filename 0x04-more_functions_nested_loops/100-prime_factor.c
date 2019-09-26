@@ -23,7 +23,8 @@ void get_prime_numbers(long a)
 		}
 	}
 	if (a > 2)
-		printf("%d ", (int) a);
+		printf("%d", (int) a);
+	printf("\n");
 }
 /**
  *main - initiatl function
