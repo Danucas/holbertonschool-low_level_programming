@@ -22,7 +22,7 @@ void print_number(int n)
 	{
 		_putchar('0');
 	}
-	else if (head < 9 && head > 0)
+	else if (abs(head) < 10 && abs(head) > 0)
 	{
 		_putchar('0' + abs(n));
 	}
