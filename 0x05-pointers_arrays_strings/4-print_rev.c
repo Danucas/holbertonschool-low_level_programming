@@ -2,15 +2,14 @@
 #include <stdio.h>
 /**
  *print_rev - swap values
- *@str: char to size
+ *@s: char to size
  */
 void print_rev(char *s)
 {
-        
 	int co = 0;
 	int pos;
 
-	while (s[co]!='\0')
+	while (s[co] != '\0')
 	{
 		co++;
 	}
@@ -18,7 +17,5 @@ void print_rev(char *s)
 	{
 		_putchar(s[pos]);
 	}
-	
 	_putchar('\n');
-    
 }
