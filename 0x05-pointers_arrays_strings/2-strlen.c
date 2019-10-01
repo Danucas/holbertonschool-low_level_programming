@@ -1,14 +1,14 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
- *swap_int - swap values
+ *_strlen - swap values
  *@s: char to size
+ *Return: count
  */
 int _strlen(char *s)
 {
-        
 	int co = 0;
-	while (s[co]!='\0')
+
+	while (s[co] != '\0')
 	{
 		co++;
 	}
