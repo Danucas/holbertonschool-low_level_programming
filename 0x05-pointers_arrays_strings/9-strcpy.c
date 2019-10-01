@@ -11,11 +11,13 @@ char *_strcpy(char *dest, char *src)
 {
 	int pos;
 	char *p = dest;
-	int siz = getCharSize(src);
 
-	for (pos = 0; pos < siz; pos++)
+	while (src[pos] != '\0')
 	{
 		dest[pos] = src[pos];
+		if (src[pos + 1] == '\0')
+			dest[pos + 1] = src[pos + 1];
+		pos++;
 	}
 	return (p);
 }
