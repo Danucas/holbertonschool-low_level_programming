@@ -8,6 +8,7 @@ void puts_half(char *str)
 {
 	int pos;
 	int siz = getCharSize(str);
+
 	if (siz % 2 == 0)
 	{
 		pos = siz / 2;
