@@ -10,7 +10,7 @@ void rev_string(char *s)
 	int pos;
 	int chp = 0;
 	int siz = getCharSize(s);
-	char m[100];
+	char m[500];
 
 	for (pos = siz - 1; pos > -1; pos--)
 	{
