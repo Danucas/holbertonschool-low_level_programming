@@ -10,7 +10,7 @@ int getCharSize(char *s);
 char *_strcpy(char *dest, char *src)
 {
 	int pos;
-	int *p = dest;
+	char *p = dest;
 	int siz = getCharSize(src);
 
 	for (pos = 0; pos < siz; pos++)
