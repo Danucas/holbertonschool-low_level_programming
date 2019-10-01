@@ -14,12 +14,9 @@ char *_strcpy(char *dest, char *src)
 
 	for (pos = 0; pos < siz; pos++)
 	{
-		*dest = *src;
-		src++;
-		dest++;
+		dest[pos] = src[pos];
 	}
-	pos = 0;
-	return (dest);
+	return (*dest);
 }
 /**
  *getCharSize - l
