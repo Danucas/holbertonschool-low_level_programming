@@ -1,0 +1,6 @@
+#!/bin/bash
+git status |grep deleted |cut -d ":" -f2|sed -e "s/    /:/g"|cut -d ":" -f2|head -n -1|
+while IFS= read -r line
+do
+    git rm $line
+done
