@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 int getCharSize(char *s);
 /**
  *puts_half - swap values
