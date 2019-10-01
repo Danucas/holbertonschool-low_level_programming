@@ -9,8 +9,15 @@ void puts_half(char *str)
 {
 	int pos;
 	int siz = getCharSize(str);
-
-	for (pos = siz / 2; pos < siz; pos++)
+	if (siz % 2 == 0)
+	{
+		pos = siz / 2;
+	}
+	else
+	{
+		pos = (siz - 1) / 2;
+	}
+	for (pos = pos; pos < siz; pos++)
 	{
 		_putchar(str[pos]);
 	}
