@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *reset_to_98
+ *reset_to_98 - reset int to 98
  *@n: pointer
  */
 void reset_to_98(int *n)
