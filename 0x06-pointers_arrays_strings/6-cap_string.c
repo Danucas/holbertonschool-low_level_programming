@@ -11,7 +11,7 @@ char *cap_string(char *s)
 {
 	int pos = 0;
 	int comp_pos = 0;
-	char comp[] = {9, 10, 11, 32, 33, 46, 44, 59, 63, 34, 40, 41, 123, 125};
+	char comp[] = {32, 9, 10, 44, 59, '.', '!', '?', '"', '(', ')', '{', '}'};
 	int len = getLength(comp);
 
 	while (*(s + pos) != '\0')
@@ -58,8 +58,6 @@ void compare(char *s, char *comp, int pos, int comp_pos, int len)
 	{
 		if (s[pos - 1] == comp[comp_pos])
 		{
-			if (s[pos - 1] == '\t')
-				s[pos - 1] = ' ';
 			should_cap  = true;
 		}
 	}
