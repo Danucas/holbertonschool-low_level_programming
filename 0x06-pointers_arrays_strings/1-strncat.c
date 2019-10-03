@@ -12,10 +12,9 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int len = getLength(dest);
 	int pos = 0;
-	
+
 	while (src[pos] != '\0' && pos < n)
 	{
-		
 		(*(dest + len)) = (*(src + pos));
 		len++;
 		pos++;
@@ -23,12 +22,16 @@ char *_strncat(char *dest, char *src, int n)
 	*(dest + len) = '\0';
 	return (dest);
 }
-
+/**
+*getLength - concatnate
+*@s: dest pointer
+*Return: something
+*/
 int getLength(char *s)
 {
 	int le = 0;
 
-	while (*(s+le) != '\0')
+	while (*(s + le) != '\0')
 	{
 		le++;
 	}
