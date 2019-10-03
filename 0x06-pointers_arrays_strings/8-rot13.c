@@ -23,6 +23,8 @@ char *rot13(char *s)
 				s[pos] += 13;
 			else
 				s[pos] -= 13;
+			less = false;
+			greater = false;
 			break;
 		}
 		pos++;
