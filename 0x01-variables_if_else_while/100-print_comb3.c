@@ -9,20 +9,22 @@ int main(void)
 {
 int x;
 int y;
-int c[90][2];
- int length = 0;
-for(x = 0; x < 10; x++)
+for (x = 0; x < 10; x++)
 {
-  for(y = 0; y < 10; y++)
+  for (y = 0; y < 10; y++)
     {
-      if(x != y){
-	c[length]  = {{x}, {y}};
+      if (x < y)
+      {
 	putchar('0' + x);
 	putchar('0' + y);
+	if(x != 8)
+	{
+		putchar(',');
+		putchar(' ');
+	}
+      }
+    }
 }
-}
-}
-
 putchar('\n');
 return (0);
 }
