@@ -16,7 +16,6 @@ char *_memset(char *s, char b, unsigned int n)
 		(*(s + pos)) = b;
 		pos++;
 	}
-	*(s + pos) = '\0';
 	return (s);
 }
 /**
