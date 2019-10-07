@@ -1,10 +1,9 @@
 #include "holberton.h"
-#include <stdio.h>
 int getLength(char *s);
 /**
  *_strstr - concatnate
- *@s: dest pointer
- *@c: src pointer
+ *@haystack: dest pointer
+ *@needle: src pointer
 *Return: something
  */
 char *_strstr(char *haystack, char *needle)
@@ -15,29 +14,29 @@ char *_strstr(char *haystack, char *needle)
 	int compl = getLength(needle);
 	int stringL = getLength(haystack);
 
-	for (pos = 0; pos < stringL - comp - 1; pos++)
+	while (pos <= stringL - compl && matched == 0)
 	{
-
-		while ((*(needle + cpos)) == (*(haystack + pos + cpos)))
+		cpos = 0;
+		while (*(needle + cpos) != '\0')
 		{
-			cpos++;
+			if (*(haystack + pos + cpos) == *(needle + cpos))
+				cpos++;
+			else
+				break;
 		}
 		if (cpos != compl)
-		{
-			cpos = 0;
 			pos++;
-		}
 		else
 		{
 			matched = 1;
 			break;
 		}
+
 	}
-	printf("length: %d", compl);
 	if (matched == 1)
-		return (haystack + pos -1);
+		return (haystack + pos);
 	else
-		return (NULL);
+		return (haystack + stringL);
 }
 /**
 *getLength - concatnate
