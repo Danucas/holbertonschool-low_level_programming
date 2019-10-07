@@ -34,7 +34,10 @@ char *_strpbrk(char *s, char *accept)
 			break;
 		}
 	}
-	return (s + pos);
+	if (matched == 1)
+		return (s + pos);
+	else
+		return (0);
 }
 /**
 *getLength - concatnate
