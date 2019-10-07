@@ -15,14 +15,7 @@ char *_strchr(char *s, char c)
 	{
 		pos++;
 	}
-	if ((*(s + pos)) == '\0')
-	{
-		return (NULL);
-	}
-	else
-	{
-		return (s + pos);
-	}
+	return (s + pos);
 }
 /**
 *getLength - concatnate
