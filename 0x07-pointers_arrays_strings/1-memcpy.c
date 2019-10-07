@@ -2,8 +2,8 @@
 int getLength(char *s);
 /**
  *_memcpy - concatnate
- *@s: dest pointer
- *@b: src pointer
+ *@dest: dest pointer
+ *@src: src pointer
  *@n: int
  *Return: something
  */
