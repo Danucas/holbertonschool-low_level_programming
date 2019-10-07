@@ -7,19 +7,24 @@ int main(void)
 {
 	int x;
 	int y;
+	int z;
 
 	for (x = 0; x < 10; x++)
 	{
 		for (y = 0; y < 10; y++)
 		{
-			if (x < y)
+			for (z = 0; z < 10; z++)
 			{
-				putchar('0' + x);
-				putchar('0' + y);
-				if (x != 8)
+				if (x < y && y < z)
 				{
-					putchar(',');
-					putchar(' ');
+					putchar('0' + x);
+					putchar('0' + y);
+					putchar('0' + z);
+					if (x != 7)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
 			}
 		}
