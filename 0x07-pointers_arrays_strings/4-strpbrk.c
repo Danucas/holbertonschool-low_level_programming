@@ -4,7 +4,7 @@ int getLength(char *s);
 /**
  *_strpbrk - concatnate
  *@s: dest pointer
- *@c: src pointer
+ *@accept: src pointer
 *Return: something
  */
 char *_strpbrk(char *s, char *accept)
@@ -17,7 +17,6 @@ char *_strpbrk(char *s, char *accept)
 	{
 		while ((*(accept + cpos)) != '\0')
 		{
-			
 			if ((*(s + pos)) == (*(accept + cpos)))
 			{
 				matched = 1;
