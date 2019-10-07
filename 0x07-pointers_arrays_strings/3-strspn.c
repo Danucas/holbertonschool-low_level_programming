@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stddef.h>
 int getLength(char *s);
 /**
  *_strspn - concatnate
