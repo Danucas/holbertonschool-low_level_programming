@@ -11,19 +11,14 @@ char *_strchr(char *s, char c)
 {
 	int pos = 0;
 
-	while ((*(s + pos)) != '\0')
+	while ((*(s + pos)) != c  && (*(s + pos)) != '\0')
 	{
-		if ((*(s + pos)) != c)
-		{
-			pos++;
-		}
-		else
-		{
-			pos++;
-			break;
-		}
+		pos++;
 	}
-	return (s + pos);
+	if ((*(s + pos)) == c)
+		return (s + pos);
+	else
+		return (0);
 }
 /**
 *getLength - concatnate
