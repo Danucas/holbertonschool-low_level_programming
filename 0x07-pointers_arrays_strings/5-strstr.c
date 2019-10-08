@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stddef.h>
 int getLength(char *s);
 /**
  *_strstr - concatnate
@@ -36,7 +37,7 @@ char *_strstr(char *haystack, char *needle)
 	if (matched == 1)
 		return (haystack + pos);
 	else
-		return (haystack + stringL + 1);
+		return (NULL);
 }
 /**
 *getLength - concatnate
