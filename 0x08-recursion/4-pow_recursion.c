@@ -3,8 +3,9 @@
 int getLength(char *s, int n);
 /**
  *_pow_recursion - puts clone
- *@s: string
- *Return: something 
+ *@x: string
+ *@y: dsa
+ *Return: something
 */
 int _pow_recursion(int x, int y)
 {
@@ -21,12 +22,13 @@ int _pow_recursion(int x, int y)
 *getLength- puts clone
 *@s: string
 *@n:le
+*Return: dsa
 */
 int getLength(char *s, int n)
 {
 	if (*(s + n) != '\0')
 	{
-		return(getLength(s, n + 1));
+		return (getLength(s, n + 1));
 	}
 	else
 	{

@@ -3,8 +3,8 @@
 int getLength(char *s, int n);
 /**
  *factorial - puts clone
- *@s: string
- *Return: something 
+ *@n: string
+ *Return: something
 */
 int factorial(int n)
 {
@@ -18,12 +18,13 @@ int factorial(int n)
 *getLength- puts clone
 *@s: string
 *@n:le
+*Return: dsa
 */
 int getLength(char *s, int n)
 {
 	if (*(s + n) != '\0')
 	{
-		return(getLength(s, n + 1));
+		return (getLength(s, n + 1));
 	}
 	else
 	{
