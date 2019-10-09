@@ -8,6 +8,8 @@ double test(double ts, int n);
 */
 int _sqrt_recursion(int n)
 {
+	if (n < 0)
+		return (-1);
 	return (test((double) n, n));
 }
 /**
@@ -50,4 +52,6 @@ double test(double ts, int n)
 	}
 	else if (res == 0)
 		return (ts / 2);
+	else
+		return (test(ts / 2, n));
 }
