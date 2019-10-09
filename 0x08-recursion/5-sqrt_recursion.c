@@ -10,7 +10,7 @@ int _sqrt_recursion(int n)
 {
 	if (n <= 0)
 		return (-1);
-	return (test((double) n, n));
+	return ((int)test((double) n, n));
 }
 /**
 *test- puts clone
