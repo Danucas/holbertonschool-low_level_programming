@@ -13,6 +13,7 @@ int _strlen_recursion(char *s)
 *getLength- puts clone
 *@s: string
 *@n:le
+*Return: dsa
 */
 int getLength(char *s, int n)
 {
