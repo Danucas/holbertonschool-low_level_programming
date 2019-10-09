@@ -3,7 +3,7 @@ int getLength(char *s, int n);
 /**
  *_strlen_recursion - puts clone
  *@s: string
- *Return: something 
+ *Return: something
 */
 int _strlen_recursion(char *s)
 {
@@ -18,7 +18,7 @@ int getLength(char *s, int n)
 {
 	if (*(s + n) != '\0')
 	{
-		return(getLength(s, n + 1));
+		return (getLength(s, n + 1));
 	}
 	else
 	{
