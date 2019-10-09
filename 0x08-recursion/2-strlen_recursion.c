@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 int getLength(char *s, int n);
 /**
  *_strlen_recursion - puts clone
@@ -23,6 +22,6 @@ int getLength(char *s, int n)
 	}
 	else
 	{
-		return (n);
+		return (n * sizeof(char));
 	}
 }
