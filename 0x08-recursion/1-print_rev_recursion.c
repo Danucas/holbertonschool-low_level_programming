@@ -1,45 +1,49 @@
 #include "holberton.h"
 #include <stdio.h>
-void getLength(char *s);
+void print_tales(char *s, int len, int pos);
+void getLength(char *s, int n);
 /**
  *_print_rev_recursion - puts clone
  *@s: string
  */
 void _print_rev_recursion(char *s)
 {
-	if (*(s) == '\n')
+	getLength(s, 0);
+}
+/**
+ *print_tales - dsa
+ *@s:dsa
+ *@len:dsa
+ *@pos:dsa
+ */
+void print_tales(char *s, int len, int pos)
+{
+	if (pos < len)
 	{
-		getLength(s);
+		_putchar(*s);
+		s--;
+		print_tales(s, len, pos + 1);
 	}
 	else
 	{
-		_putchar(*(s));
-		s--;
-		if (*(s) == '\n')
-		{
-			_putchar(*(s));
-			_putchar('\0');
-			return;
-		}
-		else
-		{
-			_print_rev_recursion(s);
-		}
+		return;
 	}
 }
 /**
 *getLength- puts clone
 *@s: string
+*@n:dsa
 */
-void getLength(char *s)
+void getLength(char *s, int n)
 {
-	if (*(s + 1) != '\0')
+	if (*(s) != '\0')
 	{
 		s++;
-		getLength(s);
+		getLength(s, n + 1);
 	}
 	else
 	{
-		_print_rev_recursion(s);
+		s--;
+		print_tales(s, n, 0);
 	}
 }
