@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
-double test(double ts, int n);
+int test(int ts, int n);
 /**
  *_sqrt_recursion - puts clone
  *@n: string
@@ -8,13 +8,7 @@ double test(double ts, int n);
 */
 int _sqrt_recursion(int n)
 {
-	if (n < 0)
-		return (-1);
-	else if (n == 0)
-		return (0);
-	else if (n == 1)
-		return (1);
-	return ((int)test((double) n, n));
+	return (test(n, 1));
 }
 /**
 *test- puts clone
@@ -22,40 +16,18 @@ int _sqrt_recursion(int n)
 *@n:le
 *Return: dsa
 */
-double test(double ts, int n)
+int test(int ts, int n)
 {
-	double res = ((ts / 2) * (ts / 2));
-	int newts;
-	double diff = (n - res);
-
-	if (diff < 0)
-		diff *= -1;
-	if (res > n)
+	if (n * n == ts)
 	{
-		if (diff < 1)
-		{
-			newts = (int) ts / 2;
-			res = (newts * newts);
-			if (res == n)
-			{
-				return (newts);
-			}
-			else
-			{
-				return (-1);
-			}
-		}
-		else
-		{
-			return (test(ts / 2, n));
-		}
+		return (n);
 	}
-	else if (res < n && res > 0)
+	else if (n * n > ts)
 	{
-		return (test((ts * 1.2), n));
+		return (-1);
 	}
-	else if (res == 0)
-		return (ts / 2);
 	else
-		return (test(ts / 2, n));
+	{
+		return (test(ts, n + 1));
+	}
 }
