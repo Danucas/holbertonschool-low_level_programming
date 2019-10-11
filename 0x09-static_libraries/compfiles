@@ -1,0 +1,7 @@
+#!/bin/bash
+cat text|
+while read l
+do
+out=$(echo $l | cut -d "." -f1)
+echo "$out"'.c'>>files
+done

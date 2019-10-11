@@ -1,0 +1,6 @@
+#!/bin/bash
+find . -name '*.o'|
+while read l
+do
+rm "${l}"
+done

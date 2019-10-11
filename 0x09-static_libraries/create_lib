@@ -1,0 +1,16 @@
+#!/bin/bash
+find ../ -name '*.c' |
+while read line
+do
+out=$(echo $line | cut -d "/" -f3| cut -d "." -f1)
+out="$out"'.o'
+for comp in $(cat files) 
+do
+   if [ "${comp}" == "${out}" ]
+	then 
+       echo "Creating ${out} object"
+       gcc -g -O -c "${line}" -o "${out}"
+       ar rc libholberton.a "${out}"
+   fi
+done
+done
