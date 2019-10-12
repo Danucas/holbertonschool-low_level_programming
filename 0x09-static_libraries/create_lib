@@ -1,16 +1,9 @@
 #!/bin/bash
-find ../ -name '*.c' |
-while read line
-do
-out=$(echo $line | cut -d "/" -f3| cut -d "." -f1)
-out="$out"'.o'
-for comp in $(cat files) 
-do
-   if [ "${comp}" == "${out}" ]
-	then 
-       echo "Creating ${out} object"
-       gcc -g -O -c "${line}" -o "${out}"
-       ar rc libholberton.a "${out}"
-   fi
-done
-done
+cat list|cut -d "." -f1|
+while read CD_KND
+ do
+   Filename=$(find ../ -name "${CD_KND}.c" | head -n1)
+   echo "creating ${CD_KND} file"
+   gcc -g -O -c "${Filename}" -o "${CD_KND}.o"
+   ar rc libholberton.a "${CD_KND}.o"
+ done
