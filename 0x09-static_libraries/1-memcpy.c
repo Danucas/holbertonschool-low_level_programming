@@ -1,5 +1,4 @@
 #include "holberton.h"
-int getLength(char *s);
 /**
  *_memcpy - concatnate
  *@dest: dest pointer
@@ -17,20 +16,4 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 		pos++;
 	}
 	return (dest);
-}
-/**
-*getLength - concatnate
-*@s: dest pointer
-*Return: something
-*/
-
-int getLength(char *s)
-{
-	int le = 0;
-
-	while (*(s + le) != '\0')
-	{
-		le++;
-	}
-	return (le);
 }

@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdio.h>
-int getCharSize(char *s);
 /**
  *_strcpy - swap values
  *@dest: char to size
@@ -19,20 +18,4 @@ char *_strcpy(char *dest, char *src)
 		pos++;
 	}
 	return (dest);
-}
-/**
- *getCharSize - l
- *@s: l
- *Return:le
- */
-
-int getCharSize(char *s)
-{
-	int co = 0;
-
-	while (s[co] != '\0')
-	{
-		co++;
-	}
-	return (co);
 }

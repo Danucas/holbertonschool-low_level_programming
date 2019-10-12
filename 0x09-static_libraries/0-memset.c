@@ -1,4 +1,5 @@
 #include "holberton.h"
+int getLength(char *s);
 /**
  *_memset - concatnate
  *@s: dest pointer

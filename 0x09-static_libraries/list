@@ -9,6 +9,7 @@
 2-strlen.o
 2-strncpy.o
 3-islower.o
+3-puts.o
 3-strcmp.o
 3-strspn.o
 4-isalpha.o
