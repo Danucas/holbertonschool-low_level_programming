@@ -18,19 +18,3 @@ char *_memset(char *s, char b, unsigned int n)
 	}
 	return (s);
 }
-/**
-*getLength - concatnate
-*@s: dest pointer
-*Return: something
-*/
-
-int getLength(char *s)
-{
-	int le = 0;
-
-	while (*(s + le) != '\0')
-	{
-		le++;
-	}
-	return (le);
-}

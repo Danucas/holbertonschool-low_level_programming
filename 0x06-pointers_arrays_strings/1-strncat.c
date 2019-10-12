@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdio.h>
-int getLength(char *s);
 /**
  *_strncat - concatnate
  *@dest: dest pointer
@@ -10,9 +9,13 @@ int getLength(char *s);
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int len = getLength(dest);
+	int len = 0;
 	int pos = 0;
 
+	while (dest[len] != '\0')
+	{
+		len++;
+	}
 	while (src[pos] != '\0' && pos < n)
 	{
 		(*(dest + len)) = (*(src + pos));
@@ -21,19 +24,4 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	*(dest + len) = '\0';
 	return (dest);
-}
-/**
-*getLength - concatnate
-*@s: dest pointer
-*Return: something
-*/
-int getLength(char *s)
-{
-	int le = 0;
-
-	while (*(s + le) != '\0')
-	{
-		le++;
-	}
-	return (le);
 }

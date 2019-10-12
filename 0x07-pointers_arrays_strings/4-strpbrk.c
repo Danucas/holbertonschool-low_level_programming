@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stddef.h>
-int getLength(char *s);
 /**
  *_strpbrk - concatnate
  *@s: dest pointer
@@ -39,19 +38,4 @@ char *_strpbrk(char *s, char *accept)
 	else
 		return (0);
 }
-/**
-*getLength - concatnate
-*@s: dest pointer
-*Return: something
-*/
 
-int getLength(char *s)
-{
-	int le = 0;
-
-	while (*(s + le) != '\0')
-	{
-		le++;
-	}
-	return (le);
-}
