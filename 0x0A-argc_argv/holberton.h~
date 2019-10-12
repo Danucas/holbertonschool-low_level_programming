@@ -1,0 +1,43 @@
+void my_name(int argc, char *argv[]);
+void arg_count(int argc, char *argv[]);
+void arg_print(int argc, char *argv[]);
+int _atoi(char *s);
+
+
+int _atoi(char *s)
+{
+        int pos = 0;
+        int sign = 1;
+        int res = 0;
+        int counting = 0;
+
+        while (s[pos] != '\0')
+        {
+                if (s[pos] == '+')
+                {
+                        sign *= 1;
+                }
+                else if (s[pos] == '-')
+                {
+                        sign *= -1;
+                }
+                if (s[pos] >= 48 && s[pos] <= 57)
+                {
+                        counting = 1;
+                        if (res != 0)
+                        {
+                                /*printf("char: %c res: %d\t", s[pos], res);*/
+                                res = (res * 10) + (sign * (s[pos] - 48));
+                        }
+                        else
+                        {
+                                /*printf("char: %c res: %d\t", s[pos], res);*/
+                                res = sign * (s[pos] - 48);
+                        }
+                }
+                else if (counting == 1)
+                        break;
+                pos++;
+        }
+        return (res);
+}
