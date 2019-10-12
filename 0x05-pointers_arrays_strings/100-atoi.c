@@ -1,54 +1,47 @@
 #include "holberton.h"
 #include <stdio.h>
 int getCharSize(char *s);
-int powe(int d, int p);
 /**
- *_strcpy - swap values
- *@dest: char to size
- *@src: size
+ *_atoi - swap values
+ *@s: size
  *Return: pointer
  */
 int _atoi(char *s)
 {
 	int pos = 0;
-	int len = getCharSize(s);
-	int mul;
 	int sign = 1;
-	int translated_value;
-	int redirPos = 0; 
+	int res = 0;
+	int counting = 0;
 
-	for (pos = 0; pos < len; pos++)
+	while (s[pos] != '\0')
 	{
-		if (s[pos] == '-')
+		if (s[pos] == '+')
 		{
-			sign = -1;
+			sign *= 1;
 		}
-		else if (s[pos] > 47 && s[pos] < 58)
+		else if (s[pos] == '-')
 		{
-			s[redirPos] = s[pos];
+			sign *= -1;
 		}
-	     
+		if (s[pos] >= 48 && s[pos] <= 57)
+		{
+			counting = 1;
+			if (res != 0)
+			{
+				/*printf("char: %c res: %d\t", s[pos], res);*/
+				res = (res * 10) + (sign * (s[pos] - 48));
+			}
+			else
+			{
+				/*printf("char: %c res: %d\t", s[pos], res);*/
+				res = sign * (s[pos] - 48);
+			}
+		}
+		else if (counting == 1)
+			break;
+		pos++;
 	}
-	
-	printf("translated: %d\nchar: %s", translated_value, s);
-	return (0);
-}
-/**
- *powe - pow
- *@d: de
- *@p: ds
- *Return: powed
- */
-int powe(int d, int p)
-{
-	int pot = d;
-	int pos = 1;
-
-	for (pos = 1; pos < p; pos++)
-	{
-		pot *= d;
-	}
-	return (pot);
+	return (res);
 }
 /**
  *getCharSize - l
