@@ -2,5 +2,14 @@
 find . -name '*.o'|
 while read l
 do
-rm "${l}"
+    rm "${l}"
+done
+find . -name "*.c"|
+while read l
+do
+    name=$(echo $l | cut -d "/" -f2)
+if [ "${name}" != '_putchar.c' ] && [ "${name}" != '3-puts.c' ]
+	then
+	    rm "${name}"
+	fi
 done
