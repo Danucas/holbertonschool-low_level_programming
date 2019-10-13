@@ -66,10 +66,9 @@ int check(char *s)
 
 	for (pos = 0; s[pos] != '\0'; pos++)
 	{
-		if (s[pos] != '+' && s[pos] != '-')
+		if (s[pos] < 48 || s[pos] > 57)
 		{
-			if (s[pos] < 48 || s[pos] > 57)
-				r = 0;
+			r = 0;
 			break;
 		}
 	}
