@@ -42,6 +42,7 @@ void add(int argc, char *argv[])
 			else
 			{
 				printf("Error\n");
+				break;
 			}
 		}
 		if (che == 1)
