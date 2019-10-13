@@ -10,7 +10,7 @@ int check(char *s);
  */
 int main(int argc, char *argv[])
 {
-	return (add(argc, argv));
+	return ((int) add(argc, argv));
 }
 /**
  *add -dsf
