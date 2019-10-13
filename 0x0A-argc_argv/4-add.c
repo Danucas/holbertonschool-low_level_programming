@@ -11,7 +11,7 @@ int check(char *s);
 int main(int argc, char *argv[])
 {
 	int res = add(argc, argv);
-	
+
 	return (res);
 }
 /**
