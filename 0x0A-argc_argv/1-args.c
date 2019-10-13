@@ -1,6 +1,4 @@
-#include "holberton.h"
 #include <stdio.h>
-void arg_count(int argc, char *argv[]);
 /**
  *main - que tal esto
  *@argc: agrcount
@@ -9,18 +7,7 @@ void arg_count(int argc, char *argv[]);
  */
 int main(int argc, char *argv[])
 {
-	arg_count(argc, argv);
-	return (0);
-}
-/**
- *my_name -dsf
- *@argc: args count
- *@argv: 0 if todo esta good
-*/
-void arg_count(int argc, char *argv[])
-{
-	if (argc < 0)
-                printf("%s", argv[0]);
+	(void) argv;
 	printf("%d\n", argc);
-
+	return (0);
 }
