@@ -1,5 +1,5 @@
 #include <stdio.h>
-void add(int argc, char *argv[]);
+int add(int argc, char *argv[]);
 int _atoi(char *s);
 int check(char *s);
 /**
@@ -10,15 +10,15 @@ int check(char *s);
  */
 int main(int argc, char *argv[])
 {
-	add(argc, argv);
-	return (0);
+	return(add(argc, argv));
 }
 /**
  *add -dsf
  *@argc: args count
  *@argv: 0 if todo esta good
+ *Return: 0 if is not ok
 */
-void add(int argc, char *argv[])
+int add(int argc, char *argv[])
 {
 	int res = 0;
 	int che = 1;
@@ -42,12 +42,13 @@ void add(int argc, char *argv[])
 			else
 			{
 				printf("Error\n");
-				break;
+				return (1);
 			}
 		}
 		if (che == 1)
 			printf("%d\n", res);
 	}
+	return (0);
 }
 /**
  *check -dsf
