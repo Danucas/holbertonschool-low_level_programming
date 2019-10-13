@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 int add(int argc, char *argv[])
 {
 	int res = 0;
-	int che = 1;
+	int che = 0;
 	int sum;
 	int pos;
 
@@ -45,7 +45,7 @@ int add(int argc, char *argv[])
 				return (1);
 			}
 		}
-		if (che == 1)
+		if (che != 0)
 			printf("%d\n", res);
 		else
 			return (0);
