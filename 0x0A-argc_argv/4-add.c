@@ -10,7 +10,7 @@ int check(char *s);
  */
 int main(int argc, char *argv[])
 {
-	return(add(argc, argv));
+	return (add(argc, argv));
 }
 /**
  *add -dsf
@@ -47,6 +47,8 @@ int add(int argc, char *argv[])
 		}
 		if (che == 1)
 			printf("%d\n", res);
+		else
+			return (0);
 	}
 	return (0);
 }
