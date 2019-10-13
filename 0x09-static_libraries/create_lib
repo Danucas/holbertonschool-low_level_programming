@@ -5,7 +5,7 @@ while read CD_KND
    Filename=$(find ../ -name "${CD_KND}.c" | head -n1)
    echo "creating ${CD_KND} file"
    #cp "${Filename}" "${$(echo $Filename | cut -d "/" -f3)}"
-   gcc -g -O -c "${Filename}" -o "${CD_KND}.o"
+   gcc -g -O -c -fno-pie "${Filename}" -o "${CD_KND}.o"
    ar rc libholberton.a "${CD_KND}.o"
 done
 gcc -fno-pie -g -O -c "_putchar.c" -o "_putchar.o"
