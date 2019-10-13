@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 void add(int argc, char *argv[])
 {
 	int res = 0;
+	int che = 1;
 	int sum;
 	int pos;
 
@@ -32,8 +33,8 @@ void add(int argc, char *argv[])
 	{
 		for (pos = 1; pos < argc; pos++)
 		{
-			sum = check(argv[pos]);
-			if (sum == 1)
+			che = check(argv[pos]);
+			if (che == 1)
 			{
 				sum = _atoi(argv[pos]);
 				res += sum;
@@ -41,10 +42,9 @@ void add(int argc, char *argv[])
 			else
 			{
 				printf("Error\n");
-				break;
 			}
 		}
-		if (sum != 0)
+		if (che == 1)
 			printf("%d\n", res);
 	}
 }
@@ -91,7 +91,7 @@ int _atoi(char *s)
 		{
 			sign *= -1;
 		}
-		if (s[pos] >= 48 && s[pos] <= 5)
+		if (s[pos] >= 48 && s[pos] <= 57)
 		{
 			counting = 1;
 			if (res != 0)
