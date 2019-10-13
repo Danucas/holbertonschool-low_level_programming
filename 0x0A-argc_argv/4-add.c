@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include <stdio.h>
 void add(int argc, char *argv[]);
 int _atoi(char *s);
@@ -15,7 +14,7 @@ int main(int argc, char *argv[])
 	return (0);
 }
 /**
- *my_name -dsf
+ *add -dsf
  *@argc: args count
  *@argv: 0 if todo esta good
 */
@@ -24,6 +23,7 @@ void add(int argc, char *argv[])
 	int res = 0;
 	int sum;
 	int pos;
+
 	if (argc < 2)
 	{
 		printf("0\n");
@@ -47,9 +47,12 @@ void add(int argc, char *argv[])
 		if (sum != 0)
 			printf("%d\n", res);
 	}
-
 }
-
+/**
+ *check -dsf
+ *@s: args count
+ *Return: 0 if todo esta good
+*/
 int check(char *s)
 {
 	int pos = 0;
@@ -66,40 +69,43 @@ int check(char *s)
 	}
 	return (r);
 }
+/**
+ *_atoi -dsf
+ *@s: args count
+ *Return: 0 if todo esta good
+*/
 int _atoi(char *s)
 {
-        int pos = 0;
-        int sign = 1;
-        int res = 0;
-        int counting = 0;
+	int pos = 0;
+	int sign = 1;
+	int res = 0;
+	int counting = 0;
 
-        while (s[pos] != '\0')
-        {
-                if (s[pos] == '+')
-                {
-                        sign *= 1;
-                }
-                else if (s[pos] == '-')
-                {
-                        sign *= -1;
-                }
-                if (s[pos] >= 48 && s[pos] <= 57)
-                {
-                        counting = 1;
-                        if (res != 0)
-                        {
-                                /*printf("char: %c res: %d\t", s[pos], res);*/
-                                res = (res * 10) + (sign * (s[pos] - 48));
-                        }
-                        else
-                        {
-                                /*printf("char: %c res: %d\t", s[pos], res);*/
-                                res = sign * (s[pos] - 48);
-                        }
-                }
-                else if (counting == 1)
-                        break;
-                pos++;
-        }
-        return (res);
+	while (s[pos] != '\0')
+	{
+		if (s[pos] == '+')
+		{
+			sign *= 1;
+		}
+		else if (s[pos] == '-')
+		{
+			sign *= -1;
+		}
+		if (s[pos] >= 48 && s[pos] <= 5)
+		{
+			counting = 1;
+			if (res != 0)
+			{
+				res = (res * 10) + (sign * (s[pos] - 48));
+			}
+			else
+			{
+				res = sign * (s[pos] - 48);
+			}
+		}
+		else if (counting == 1)
+			break;
+		pos++;
+	}
+	return (res);
 }
