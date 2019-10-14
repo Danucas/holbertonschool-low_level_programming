@@ -3,8 +3,7 @@ cat list|cut -d "." -f1|
 while read CD_KND
  do
    Filename=$(find ../ -name "${CD_KND}.c" | head -n1)
-   echo "creating ${CD_KND} file"
-   #cp "${Filename}" "${$(echo $Filename | cut -d "/" -f3)}"
+   echo -e "\e[34mCreating ${CD_KND}\e[32m file\e[39m"
    gcc -fno-pie -g -O -c "${Filename}" -o "${CD_KND}.o"
    ar rc libholberton.a "${CD_KND}.o"
 done
