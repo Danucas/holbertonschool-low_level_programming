@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+ *_strdup - fdsf
+ *@str: string
+ *Return: char array pointer
+ */
 char  *_strdup(char *str)
 {
 	char *buf;
@@ -15,6 +19,8 @@ char  *_strdup(char *str)
 	if (len == 0)
 		return (NULL);
 	buf = malloc(sizeof(char) * len);
+	if (buf == NULL)
+		return (NULL);
 	while (pos < len)
 	{
 		buf[pos] = *(str + pos);
