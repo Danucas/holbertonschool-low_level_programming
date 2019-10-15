@@ -14,8 +14,10 @@ char  *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-
+	else
+	{
 	len = (unsigned int) strlen(str);
+	printf("%u", len);
 	if (len == 0)
 		return (NULL);
 	buf = malloc(sizeof(char) * (len + 1));
@@ -27,4 +29,5 @@ char  *_strdup(char *str)
 		pos++;
 	}
 	return (buf);
+	}
 }
