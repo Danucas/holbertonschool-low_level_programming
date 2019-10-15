@@ -37,6 +37,8 @@ char *str_concat(char *s1, char *s2)
 		}
 	}
 	buf = malloc(sizeof(char) * (len + 1));
+	if (buf == NULL)
+		return (NULL);
 	pos = 0;
 	while (pos < len)
 	{
