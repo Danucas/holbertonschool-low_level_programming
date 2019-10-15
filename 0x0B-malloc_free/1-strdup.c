@@ -9,26 +9,21 @@ char  *_strdup(char *str)
 {
 	char *buf;
 	unsigned int pos = 0;
-	unsigned int len = 0;
+	unsigned int len;
 
 	if (str == NULL)
 		return (NULL);
 
-	while (*(str + len) != '\0')
-	{
-		len++;
-	}
-
+	len = (unsigned int) strlen(str);
 	if (len == 0)
 		return (NULL);
 	buf = malloc(sizeof(char) * (len + 1));
 	if (buf == NULL)
 		return (NULL);
-	while (pos < len)
+	while (pos < len + 1)
 	{
 		buf[pos] = *(str + pos);
 		pos++;
 	}
-		     buf[pos] = '\0';
 	return (buf);
 }
