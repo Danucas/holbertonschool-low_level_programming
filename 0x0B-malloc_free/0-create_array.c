@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+ *create_array - sdfsdf
+ *@size: size to create
+ *@c: char to fill
+ *Return: pointer to new char
+ */
 char  *create_array(unsigned int size, char c)
 {
 	char *buf;
