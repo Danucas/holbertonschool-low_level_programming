@@ -35,6 +35,8 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 	lengths = malloc(sizeof(int) * (ac));
+	if (lengths == NULL)
+		return (NULL);
 	for (p = 0; p < ac; p++)
 	{
 		lengths[p] = _strlen(av[p]);
