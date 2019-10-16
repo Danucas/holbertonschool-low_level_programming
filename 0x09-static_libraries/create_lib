@@ -2,8 +2,15 @@
 cat list|cut -d "." -f1|
 while read file
  do
+<<<<<<< HEAD
    Filename=$(find ../ -name "${file}.c" | head -n1)
    echo -e "\e[36mCreating ${file} file\e[97m"
    gcc -g -O -c "${Filename}" -o "${file}.o"
    ar rc libholberton.a "${file}.o"
+=======
+   Filename=$(find ../ -name "${CD_KND}.c" | head -n1)
+   echo -e "\e[34mCreating ${CD_KND}\e[32m file\e[39m"
+   gcc -fno-pie -g -O -c "${Filename}" -o "${CD_KND}.o"
+   ar rc libholberton.a "${CD_KND}.o"
+>>>>>>> 742563971f2e77b4d0e652a63d5ece5f60b9b3d3
 done
