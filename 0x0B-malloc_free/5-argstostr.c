@@ -42,7 +42,7 @@ char *argstostr(int ac, char **av)
 		lengths[p] = _strlen(av[p]);
 		final_len += lengths[p] + 1;
 	}
-	buf = malloc(sizeof(char) * (final_len + 1));
+	buf = malloc(sizeof(char) * (final_len));
 	if (lengths == NULL || buf == NULL)
 		return (NULL);
 	for (p = 0; p < ac; p++)
@@ -54,6 +54,5 @@ char *argstostr(int ac, char **av)
 		buf[count + subp] = '\n';
 		count += lengths[p] + 1;
 	}
-	buf[count + subp + 1] = '\0';
 	return (buf);
 }
