@@ -1,12 +1,9 @@
 #!/bin/bash
 cat list|cut -d "." -f1|
-while read CD_KND
+while read file
  do
-   Filename=$(find ../ -name "${CD_KND}.c" | head -n1)
-   echo "creating ${CD_KND} file"
-   #cp "${Filename}" "${$(echo $Filename | cut -d "/" -f3)}"
-   gcc -g -O -c "${Filename}" -o "${CD_KND}.o"
-   ar rc libholberton.a "${CD_KND}.o"
+   Filename=$(find ../ -name "${file}.c" | head -n1)
+   echo -e "\e[36mCreating ${file} file\e[97m"
+   gcc -g -O -c "${Filename}" -o "${file}.o"
+   ar rc libholberton.a "${file}.o"
 done
-gcc -fno-pie -g -O -c "_putchar.c" -o "_putchar.o"
-ar rc libholberton.a "_putchar.o"
