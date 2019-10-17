@@ -1,0 +1,16 @@
+#!/bin/bash
+find ../0x05-pointers_arrays_strings -name "*.c" |
+    while read file
+    do
+	cat $file | grep -n "<stdio.h>" |
+	    while read match
+	    do
+		linen=$(echo $match | cut -d ":" -f1)
+		cont=$(echo $match | cut -d ":" -f2)
+		filename=$(echo $file | cut -d "/" -f3)
+		echo  -e "\e[36m""File: ==> ${filename} <==\e[97m"
+		echo -e "\e[5mLine ${linen}"
+		echo "Cont: ${cont}"
+		echo "............."
+	    done
+    done

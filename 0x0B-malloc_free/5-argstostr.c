@@ -25,7 +25,7 @@ int _strlen(char *s)
  */
 char *argstostr(int ac, char **av)
 {
-	char *buf;
+	char *buf, *res;
 	int *lengths;
 	int final_len = 0;
 	int p;
@@ -35,14 +35,18 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 	lengths = malloc(sizeof(int) * (ac));
+	if (lengths == NULL)
+		return (NULL);
 	for (p = 0; p < ac; p++)
 	{
 		lengths[p] = _strlen(av[p]);
 		final_len += lengths[p] + 1;
 	}
-	buf = malloc(sizeof(char) * final_len);
-	if (lengths == NULL || buf == NULL)
+	final_len++;
+	buf = malloc(sizeof(char) * (final_len));
+	if (buf == NULL)
 		return (NULL);
+	res = buf;
 	for (p = 0; p < ac; p++)
 	{
 		for (subp = 0; av[p][subp] != '\0'; subp++)
@@ -52,6 +56,10 @@ char *argstostr(int ac, char **av)
 		buf[count + subp] = '\n';
 		count += lengths[p] + 1;
 	}
+<<<<<<< HEAD
 	buf[count] = '\0';
 	return (buf);
+=======
+	return (res);
+>>>>>>> 1da7c5def12281ab2b088b89474b7a0fa8984429
 }
