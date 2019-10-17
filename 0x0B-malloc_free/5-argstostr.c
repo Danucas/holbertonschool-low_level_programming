@@ -52,6 +52,6 @@ char *argstostr(int ac, char **av)
 		buf[count + subp] = '\n';
 		count += lengths[p] + 1;
 	}
-	buf[count + subp] = '\0';
+	buf[count] = '\0';
 	return (buf);
 }
