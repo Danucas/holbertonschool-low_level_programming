@@ -5,7 +5,10 @@
  *@name: the name
  *@age: old
  *@owner: me
- *Description: smiley
+(* a blank line
+*Description: smiley is my dog my dog)?
+(* section header: the header is dog.h)*
+ *Return: nothing
  */
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
