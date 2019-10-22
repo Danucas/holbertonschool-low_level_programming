@@ -18,6 +18,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t newd;
 	dog_t *p;
 
+	if (name == NULL)
+		return (NULL);
 	while (*(name + nl) != '\0')
 	{
 		nl++;
