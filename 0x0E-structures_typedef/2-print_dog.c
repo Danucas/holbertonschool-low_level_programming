@@ -4,7 +4,11 @@
 /**
  *print_dog - print a dog
  *@d: th dog
- */
+(* a blank line
+*Description: smiley is my dog my dog)?
+(* section header: the header is dog.h)*
+ *Return: nothing
+*/
 void print_dog(struct dog *d)
 {
 	if (d == NULL)
