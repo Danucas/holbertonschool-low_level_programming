@@ -10,5 +10,6 @@
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	*d = (typeof(*d)){.name = name, .age = age, .owner = owner};
+	if (d != null)
+		*d = (typeof(*d)){.name = name, .age = age, .owner = owner};
 }
