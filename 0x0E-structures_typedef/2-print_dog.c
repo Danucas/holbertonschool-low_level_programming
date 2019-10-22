@@ -6,14 +6,13 @@
  *@d: th dog
 (* a blank line
 *Description: smiley is my dog my dog)?
-(* section header: the header is dog.h)*
+(* section header: header of this dog is dog.h)*
  *Return: nothing
 */
 void print_dog(struct dog *d)
 {
 	if (d == NULL)
 		return;
-	age = d->age;
 	if (d->name == 0)
 		printf("Name: (nil)\n");
 	printf("Name: %s\n", d->name);
