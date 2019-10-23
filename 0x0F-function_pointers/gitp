@@ -1,0 +1,4 @@
+#!/bin/bash
+git add .
+git commit -m "keep pushing"
+git push origin master
