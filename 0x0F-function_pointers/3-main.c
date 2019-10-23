@@ -10,6 +10,7 @@
 int main(int argc, char **argv)
 {
 	int res;
+	int a, b;
 	int (*f)(int, int);
 
 	if (argc != 4)
@@ -23,7 +24,9 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(99);
 	}
-	res = f(atoi(argv[1]), atoi(argv[3]));
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	res = f(a, b);
 	printf("%d\n", res);
 	return (0);
 }
