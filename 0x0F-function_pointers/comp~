@@ -1,0 +1,3 @@
+#!/bin/bash
+echo -e "\e[34m Compilando \e[0m"
+gca 3-op_functions.c 3-main.c 3-get_op_function.c -o calc
