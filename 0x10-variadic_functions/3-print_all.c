@@ -20,7 +20,7 @@ void print_all(const char * const format, ...)
 		{
 		case 's':
 			s = va_arg(l, char *);
-			if (s == NULL)
+			if (s == NULL || *s == '\0')
 			{
 				printf("(nil)");
 				break;
