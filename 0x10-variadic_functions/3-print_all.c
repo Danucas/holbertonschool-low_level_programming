@@ -14,13 +14,13 @@ void print_all(const char * const format, ...)
 	int pass = 0;
 
 	va_start(l, format);
-	while (*f != '\0')
+	while (f != NULL && *f != '\0')
 	{
 		switch (*f)
 		{
 		case 's':
 			s = va_arg(l, char *);
-			if (s == NULL || *s == '\0')
+			if (s == NULL)
 			{
 				printf("(nil)");
 				break;
