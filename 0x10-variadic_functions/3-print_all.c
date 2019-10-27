@@ -3,29 +3,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *sum_them_all - sum args
- *@separator: the separator
- *@n: dsa
+ *print_all - sum args
+ *@format: the separator
  *Return: the sum
  */
 void print_all(const char * const format, ...)
 {
 	va_list l;
-	char *s;
+	char *s, *f = (char *) format;
 	int j, pass = 0;
-	char *f = (char *) format;
 
 	va_start(l, format);
-	while(*f != '\0')
+	while (*f != '\0')
 	{
 		switch (*f)
 		{
 		case 's':
 			s = va_arg(l, char *);
 			if (s == NULL)
+			{
 				printf("(nil)");
-			else
-				printf("%s", s);
+				break;
+			}
+			printf("%s", s);
 			break;
 		case 'i':
 			j = va_arg(l, int);
@@ -36,7 +36,6 @@ void print_all(const char * const format, ...)
 			printf("%c", j);
 			break;
 		case 'f':
-		       
 			printf("%f", (float) va_arg(l, double));
 			break;
 		default:
@@ -45,9 +44,7 @@ void print_all(const char * const format, ...)
 		}
 		f++;
 		if (*f != '\0' && pass == 0)
-		{
 			printf(", ");
-		}
 		pass = 0;
 	}
 	va_end(l);
