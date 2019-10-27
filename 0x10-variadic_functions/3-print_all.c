@@ -11,7 +11,7 @@ void print_all(const char * const format, ...)
 {
 	va_list l;
 	char *s, *f = (char *) format;
-	int j, pass = 0;
+	int pass = 0;
 
 	va_start(l, format);
 	while (*f != '\0')
@@ -28,15 +28,13 @@ void print_all(const char * const format, ...)
 			printf("%s", s);
 			break;
 		case 'i':
-			j = va_arg(l, int);
-			printf("%d", j);
+			printf("%d", va_arg(l, int));
 			break;
 		case 'c':
-			j = (int) va_arg(l, int);
-			printf("%c", j);
+			printf("%c", va_arg(l, int));
 			break;
 		case 'f':
-			printf("%f", (float) va_arg(l, double));
+			printf("%f", va_arg(l, double));
 			break;
 		default:
 			pass = 1;
