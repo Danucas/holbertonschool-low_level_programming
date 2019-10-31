@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  *add_node - print list
  *@head: the head of the list
@@ -9,15 +10,24 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	const list_t *c = h;
-	size_t el = 0;
+	list_t *c;
+	unsigned int l = 0;
+	char *dup;
 
-	while (c != NULL)
+	c = malloc(sizeof(list_t));
+	if (c == NULL)
+		return (NULL);
+	dup = strdup(str);
+	if (dup != NULL)
 	{
-		el++;
-		if (c->next == NULL)
-			return (el);
-		c = c->next;
+		while (dup[l] != '\0')
+		{
+			l++;
+		}
 	}
-	return (el);
+	c->str = dup;
+	c->len = l;
+	c->next = *head;
+	*head = c;
+	return (c);
 }
