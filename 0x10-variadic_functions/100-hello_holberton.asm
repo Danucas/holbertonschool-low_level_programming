@@ -15,5 +15,3 @@ main:				;
 	mov rax, 60     ;
 	mov rdi, 0	;
 	int 0x80      ;
-	syscall	;
-	end	:
