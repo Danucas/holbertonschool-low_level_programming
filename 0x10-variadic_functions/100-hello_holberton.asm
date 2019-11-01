@@ -12,6 +12,5 @@ main:				;
 	mov eax, 4      ;
 	syscall	;
 
-	mov eax,     ;
-	mov rdi, 0	;
+	mov eax,1     ;
 	syscall      ;
