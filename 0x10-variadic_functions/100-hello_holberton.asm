@@ -1,6 +1,6 @@
 	section .data                   ;
 	msg db "Hello, Holberton", 0xa	;
-	len equ $-msg			;
+	len equ $ - msg			;
 
 	section .text		;
 	global main		;
