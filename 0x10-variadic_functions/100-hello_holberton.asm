@@ -6,12 +6,12 @@
 	global main		;
 
 main:				;
-	mov rax, 1      	;
-	mov rdi, 1      ;
-	mov rsi, msg    ;
-	mov rdx, len      ;
-	int 0x80	;
+	mov edx, len      	;
+	mov ecx, msg      ;
+	mov ebx, 1    ;
+	mov eax, 4      ;
+	syscall	;
 
-	mov rax, 60     ;
+	mov eax,     ;
 	mov rdi, 0	;
-	int 0x80      ;
+	syscall      ;
