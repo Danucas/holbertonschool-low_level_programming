@@ -1,18 +1,16 @@
- SECTION .data
-msg:	db "Hello, world!", 0
-fmt: 	db "%s", 10, 0
+extern printf			;
+section .data			;
+msg:	db "Hello, Holberton", 0;
+fmt: 	db "%s", 10, 0		;
+section .text			;
+global main			;
 
-	SECTION .text
-	extern printf
-	global main
-
-main:
-	mov esi, msg	;
-	mov edi, fmt	;
-	mov eax, 0	;
-
-	call printf
-
-	mov ebx, 0	;
-	mov eax, 1	;
-	int 0x80	;
+main:				;
+	push rbp	;
+	mov rdi, fmt	;
+	mov rsi, msg	;
+	mov rax, 0	;
+	call printf	;
+	pop rbp		;
+	mov rax, 0	;
+	ret		;
