@@ -2,13 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *list_len - print list
+ *listint_len - print list
  *@h: the head of the list
  *Return: length
  */
-size_t list_len(const list_t *h)
+size_t listint_len(const listint_t *h)
 {
-	const list_t *c = h;
+	const listint_t *c = h;
 	size_t el = 0;
 
 	while (c != NULL)
