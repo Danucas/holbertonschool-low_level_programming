@@ -5,12 +5,11 @@
 /**
  *free_listint2 - print list
  *@head: the head of the list
- *Return: length
  */
 void free_listint2(listint_t **head)
 {
 	listint_t *tmp;
-	
+
 	if (*head != NULL)
 	{
 		while ((*head)->next != NULL)
