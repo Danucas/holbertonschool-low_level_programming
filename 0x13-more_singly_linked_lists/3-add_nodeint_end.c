@@ -3,31 +3,22 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- *add_node_end - print list
+ *add_nodeint_end - print list
  *@head: the head of the list
- *@str: the head of the list
+ *@n: the head of the list
  *Return: length
  */
-list_t *add_node_end(list_t **head, const char *str)
+listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	list_t *c, *g = *head;
-	static list_t *f;
-	unsigned int l = 0;
-	char *dup;
+	listint_t *c, *g = *head;
+	static listint_t *f;
 
-	c = malloc(sizeof(list_t));
+	c = malloc(sizeof(listint_t));
 	if (c == NULL)
 		return (NULL);
 	if (f == NULL)
 		f = c;
-	dup = strdup(str);
-	if (dup != NULL)
-	{
-		while (dup[l] != '\0')
-			l++;
-	}
-	c->str = dup;
-	c->len = l;
+	c->n = n;
 	while (1)
 	{
 		if (g != NULL)
