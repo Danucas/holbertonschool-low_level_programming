@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- *add_nodeint_end - print list
+ *insert_nodeint_at_index - print list
  *@head: the head of the list
  *@idx: the head of the list
  *@n: the head of the list
@@ -27,30 +27,27 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			c->n = n;
 			c->next = g;
 			if (index == 0)
-			{
 				*head = c;
-			}
 			else
 				last->next = c;
 			return (c);
 		}
-       		index++;
+		index++;
 		last = g;
-	        if (g->next != NULL)
+		if (g->next != NULL)
 			g  = g->next;
 		else
 			break;
 	}
 	if (index == idx)
 	{
-	       	c = malloc(sizeof(listint_t));
-       		if (c == NULL)
+		c = malloc(sizeof(listint_t));
+		if (c == NULL)
 			return (NULL);
 		c->n = n;
-	       	c->next = NULL;
-       		last->next = c;
+		c->next = NULL;
+		last->next = c;
 		return (c);
-
 	}
 	return (NULL);
 }
