@@ -41,5 +41,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		else
 			break;
 	}
-	return (c);
+	if (index == idx)
+	{
+		c->next = NULL;
+		last->next = c;
+		return (c);
+	}
+	free(c);
+	return (NULL);
 }
