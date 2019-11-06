@@ -3,10 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- *add_nodeint_end - print list
+ *delete_nodeint_at_index - print list
  *@head: the head of the list
- *@idx: the head of the list
- *@n: the head of the list
+ *@index: the head of the list
  *Return: length
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
@@ -28,15 +27,14 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			}
 			else
 			{
-				last->next = g->next;;
+				last->next = g->next;
 			}
-			
 			free(del);
 			return (1);
 		}
 		index++;
 		last = g;
-	        if (g->next != NULL)
+		if (g->next != NULL)
 			g  = g->next;
 		else
 			break;
