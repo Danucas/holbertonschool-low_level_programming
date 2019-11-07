@@ -9,60 +9,28 @@
 
 void print_binary(unsigned long int n)
 {
-	int pos = 0;
-	unsigned long int bin_tab[32];
-	unsigned int max = 1;
 	unsigned long int grade = 1;
-
-	bin_tab[0] = grade;
-	for (; max < 32; max++)
-	{
-		grade *= 2;
-		bin_tab[max] = grade;
-	}
-
 
 	if (n == 0)
 	{
 		_putchar('0');
 	}
-	while (n >= bin_tab[pos])
+	while (n >= grade)
 	{
-		pos++;
+		grade *= 2;
 	}
-
-	pos--;
-	while (pos >= 0)
+	grade *= 0.5;
+	while (grade > 0)
 	{
-		if (n >= bin_tab[pos])
+		if (n >= grade)
 		{
 			_putchar('1');
-			n = (n - bin_tab[pos]);
+			n = (n - grade);
 		}
 		else
 		{
 			_putchar('0');
 		}
-		pos--;
+		grade *= 0.5;
 	}
-}
-/**
- *get_bintab - bin to dec
- *Return: the converted value
- */
-
-unsigned long int *get_bintab()
-{
-	unsigned long int bin_tab[32], *bin;
-	unsigned int max = 1;
-	unsigned long int grade = 1;
-
-	bin_tab[0] = grade;
-	for (; max < 32; max++)
-	{
-		grade *= 2;
-		bin_tab[max] = grade;
-	}
-	bin = bin_tab;
-	return (bin);
 }
