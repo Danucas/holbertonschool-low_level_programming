@@ -10,7 +10,6 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int grade;
-	int prub = (int) n;
 	int check = 0;
 
 	if (n == 0)
@@ -23,10 +22,10 @@ void print_binary(unsigned long int n)
 		if (n & grade)
 		{
 			check = 1;
-			_putchar("1");
+			_putchar('1');
 		}
 		else if (check == 1)
-			_putchar("0");
+			_putchar('0');
 	}
 
 
