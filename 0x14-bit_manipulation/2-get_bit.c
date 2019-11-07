@@ -18,7 +18,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	{
 		return (0);
 	}
-	grade = grade << 62;
+	grade = grade << 63;
 	while (!(n & grade))
 	{
 		grade >>= 1;
