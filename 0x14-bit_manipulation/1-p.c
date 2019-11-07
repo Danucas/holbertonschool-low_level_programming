@@ -16,7 +16,7 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
-	grade = grade << 63;
+	grade = grade << 31;
 	while (!(n & grade))
 	{
 		grade >>= 1;
