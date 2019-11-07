@@ -14,6 +14,13 @@ void print_binary(unsigned long int n)
 	if (n == 0)
 	{
 		_putchar('0');
+		_putchar(0);
+		return;
+	}
+	else if (n == 1)
+	{
+		_putchar('1');
+		_putchar(0);
 		return;
 	}
 	while (n >= grade)
@@ -34,4 +41,5 @@ void print_binary(unsigned long int n)
 		}
 		grade >>= 1;
 	}
+	_putchar(0);
 }
