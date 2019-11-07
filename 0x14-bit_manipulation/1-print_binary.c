@@ -9,28 +9,25 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int grade = 1;
+	unsigned long int grade;
+	int prub = (int) n;
+	int check = 0;
 
 	if (n == 0)
 	{
 		_putchar('0');
+		return;
 	}
-	while (n >= grade)
+	for (grade = 1 << 31; grade > 0; grade *= 0.5)
 	{
-		grade *= 2;
-	}
-	grade *= 0.5;
-	while (grade > 0)
-	{
-		if (n >= grade)
+		if (n & grade)
 		{
-			_putchar('1');
-			n = (n - grade);
+			check = 1;
+			_putchar("1");
 		}
-		else
-		{
-			_putchar('0');
-		}
-		grade *= 0.5;
+		else if (check == 1)
+			_putchar("0");
 	}
+
+
 }
