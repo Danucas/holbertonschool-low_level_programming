@@ -13,7 +13,7 @@
 
 int create_file(const char *filename, char *text_context)
 {
-	int fd, ret = 1, wr_stat;
+	int fd, wr_stat;
 	size_t s_len = 0;
 
 	if (filename == NULL)
@@ -21,7 +21,7 @@ int create_file(const char *filename, char *text_context)
 		return (-1);
 	}
 /*	printf("filedes: %d\n", fd);*/
-	fd = open(filename, O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
+	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IWUSR | S_IRUSR);
 	if (fd < 0)
 		return (-1);
 /*	printf("filedes: %d %s\n", fd, text_context);*/
@@ -35,12 +35,7 @@ int create_file(const char *filename, char *text_context)
 			close(fd);
 			return (-1);
 		}
-		ret = 1;
-	}
-	else
-	{
-		ret = 1;
 	}
 	close(fd);
-	return (ret);
+	return (1);
 }
