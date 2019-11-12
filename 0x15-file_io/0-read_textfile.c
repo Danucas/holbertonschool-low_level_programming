@@ -21,20 +21,27 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	if (filename == NULL)
-		return (0);
-	fd = open(filename, O_RDONLY);
-	if (fd < 3)
 	{
+		free(buff);
+		return (0);
+	}
+	fd = open(filename, O_RDONLY);
+	if (fd < 0)
+	{
+		free(buff);
 		return (0);
 	}
 	count = read(fd, buff, letters);
-
 	if (count < 0)
-		return (0);
-
-	if (write(STDOUT_FILENO, &buff[0], count) != count)
 	{
+		free(buff);
 		return (0);
 	}
+	if (write(STDOUT_FILENO, &buff[0], count) != count)
+	{
+		free(buff);
+		return (0);
+	}
+	free(buff);
 	return (count);
 }
