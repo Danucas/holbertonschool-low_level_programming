@@ -20,25 +20,24 @@ int create_file(const char *filename, char *text_context)
 	{
 		return (-1);
 	}
-	fd = open(filename, O_WRONLY | O_TRUNC);
+/*	printf("filedes: %d\n", fd);*/
+	fd = open(filename, O_WRONLY | O_CREAT, S_IWUSR | S_IRUSR);
 	if (fd < 0)
+		return (-1);
+/*	printf("filedes: %d %s\n", fd, text_context);*/
+	if (text_context != NULL)
 	{
-		close(fd);
-/*		printf("filedes: %d\n", fd);*/
-		fd = open(filename, O_WRONLY | O_CREAT, 00600);
-		if (fd < 0)
+		while (*(text_context + (s_len)) != '\0')
+			s_len++;
+		wr_stat = write(fd, text_context, s_len);
+		if (wr_stat == -1)
 			return (-1);
-/*		printf("filedes: %d %s\n", fd, text_context);*/
-		if (text_context != NULL)
-		{
-			while (*(text_context + (s_len)) != '\0')
-				s_len++;
-			wr_stat = write(fd, text_context, s_len);
-			if (wr_stat < 0 || wr_stat != (int) s_len)
-				ret = -1;
-		}
+		ret = 1;
+	}
+	else
+	{
+		ret = 1;
 	}
 	close(fd);
-	(void) text_context;
 	return (ret);
 }
