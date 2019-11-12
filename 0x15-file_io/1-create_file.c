@@ -31,7 +31,10 @@ int create_file(const char *filename, char *text_context)
 			s_len++;
 		wr_stat = write(fd, text_context, s_len);
 		if (wr_stat == -1)
+		{
+			close(fd);
 			return (-1);
+		}
 		ret = 1;
 	}
 	else
