@@ -13,7 +13,7 @@
 
 int create_file(const char *filename, char *text_context)
 {
-	int fd, ret = 1;
+	int fd, ret = 1, wr_stat;
 	size_t s_len = 0;
 
 	if (filename == NULL)
@@ -33,7 +33,9 @@ int create_file(const char *filename, char *text_context)
 		{
 			while (*(text_context + (s_len)) != '\0')
 				s_len++;
-			write(fd, text_context, s_len);
+			wr_stat = write(fd, text_context, s_len);
+			if (wr_stat < 0 || wr_stat != s_len)
+				ret = -1;
 		}
 	}
 	close(fd);
