@@ -4,6 +4,8 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+int write_to_file(int fd1, int fd2, const char *file_from, char *file_to);
 /**
  *_cp - read a file
  *@file_from: the file
@@ -13,12 +15,7 @@
 
 int _cp(const char *file_from, char *file_to)
 {
-	int fd1, fd2, wr_stat;
-	char *buff;
-	size_t s_len = 1024, count = 0;
-	int rd;
-	(void) wr_stat;
-	(void) s_len;
+	int fd1, fd2, cl1, cl2;
 
 	if (file_from == NULL || file_to == NULL)
 	{
@@ -36,6 +33,30 @@ int _cp(const char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
 		exit(99);
 	}
+	write_to_file(fd1, fd2, file_from, file_to);
+	cl1 = close(fd1) < 0;
+	cl2 = close(fd2) < 0;
+	if (cl1 || cl2)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (cl1) ? fd1 : fd2);
+	}
+	return (1);
+}
+/**
+ *write_to_file - read a file
+ *@fd1: the file
+ *@fd2: amount of letters
+ *@file_from: the file
+ *@file_to: amount of letters
+ *Return: status
+ */
+
+int write_to_file(int fd1, int fd2, const char *file_from, char *file_to)
+{
+	char *buff;
+	int rd, wr_stat;
+	size_t s_len = 1024, count = 0;
+
 	buff = malloc(sizeof(char) * s_len);
 	rd = read(fd1, buff, s_len);
 	while (count < 1025)
@@ -45,13 +66,15 @@ int _cp(const char *file_from, char *file_to)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);
 		}
-		dprintf(fd2, "%s", buff);
+		wr_stat = write(fd2, buff, rd);
+		if (wr_stat == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
+		}
 		if (rd < (int) s_len)
 			break;
 		rd = read(fd1, buff, s_len);
 	}
-	dprintf(STDOUT_FILENO, "Close res: %d\n", close(fd1));
-	close(fd2);
 	return (1);
 }
 /**
