@@ -21,13 +21,13 @@ int _cp(const char *file_from, char *file_to)
 	{
 		return (-1);
 	}
-	fd1 = open(file_from, O_RDONLY, S_IRUSR);
+	fd1 = open(file_from, O_RDONLY);
 	if (fd1 < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 00664);
 	if (fd2 < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
@@ -54,33 +54,25 @@ int _cp(const char *file_from, char *file_to)
 
 int write_to_file(int fd1, int fd2, const char *file_from, char *file_to)
 {
-	char *buff;
+	char buff[1024];
 	int rd, wr_stat;
-	size_t s_len = 1024, count = 0;
+	size_t s_len = 1024;
 
-	buff = malloc(sizeof(char) * s_len);
-	if (!buff)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
-		exit(99);
-	}
 	rd = read(fd1, buff, s_len);
-	while (count < 1025)
+	while (rd > 0)
 	{
-		if (rd < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			exit(98);
-		}
 		wr_stat = write(fd2, buff, rd);
 		if (wr_stat == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
 			exit(99);
 		}
-		if (rd < (int) s_len)
-			break;
 		rd = read(fd1, buff, s_len);
+	}
+	if (rd < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		exit(98);
 	}
 	return (1);
 }
@@ -97,6 +89,6 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	dprintf(STDOUT_FILENO, "-> %d)\n", _cp(argv[1], argv[2]));
+	_cp(argv[1], argv[2]);
 	return (0);
 }
