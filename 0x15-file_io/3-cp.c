@@ -27,7 +27,7 @@ int _cp(const char *file_from, char *file_to)
 	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 00664);
 	if (fd2 < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 	write_to_file(fd1, fd2, file_from, file_to);
@@ -62,7 +62,7 @@ int write_to_file(int fd1, int fd2, const char *file_from, char *file_to)
 		wr_stat = write(fd2, buff, rd);
 		if (wr_stat == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
 		}
 		rd = read(fd1, buff, s_len);
