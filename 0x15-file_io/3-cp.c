@@ -39,6 +39,7 @@ int _cp(const char *file_from, char *file_to)
 	if (cl1 || cl2)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (cl1) ? fd1 : fd2);
+		exit(100);
 	}
 	return (1);
 }
@@ -58,6 +59,11 @@ int write_to_file(int fd1, int fd2, const char *file_from, char *file_to)
 	size_t s_len = 1024, count = 0;
 
 	buff = malloc(sizeof(char) * s_len);
+	if (!buff)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
+		exit(99);
+	}
 	rd = read(fd1, buff, s_len);
 	while (count < 1025)
 	{
@@ -70,6 +76,7 @@ int write_to_file(int fd1, int fd2, const char *file_from, char *file_to)
 		if (wr_stat == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
+			exit(99);
 		}
 		if (rd < (int) s_len)
 			break;
