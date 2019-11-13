@@ -16,6 +16,7 @@ int write_to_file(int fd1, int fd2, const char *file_from, char *file_to);
 int _cp(const char *file_from, char *file_to)
 {
 	int fd1, fd2, cl1, cl2;
+	char *fil;
 
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 < 0)
@@ -34,7 +35,8 @@ int _cp(const char *file_from, char *file_to)
 	cl2 = close(fd2) < 0;
 	if (cl1 || cl2)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", (cl1) ? file_from : file_to);
+		fil = (cl1) ? (char *) file_from : file_to;
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", fil);
 		exit(100);
 	}
 	return (1);
