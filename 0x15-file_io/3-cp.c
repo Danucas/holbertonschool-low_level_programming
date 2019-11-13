@@ -17,10 +17,6 @@ int _cp(const char *file_from, char *file_to)
 {
 	int fd1, fd2, cl1, cl2;
 
-	if (file_from == NULL || file_to == NULL)
-	{
-		return (-1);
-	}
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 < 0)
 	{
@@ -38,7 +34,7 @@ int _cp(const char *file_from, char *file_to)
 	cl2 = close(fd2) < 0;
 	if (cl1 || cl2)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (cl1) ? fd1 : fd2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %s\n", (cl1) ? file_from : file_to);
 		exit(100);
 	}
 	return (1);
