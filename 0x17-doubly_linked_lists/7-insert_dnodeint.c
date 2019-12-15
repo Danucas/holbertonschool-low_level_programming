@@ -1,7 +1,8 @@
 #include "lists.h"
 /**
  *insert_dnodeint_at_index - print the elemnts of a double linked list
- *@head: the header
+ *@h: the header
+ *@idx: the header
  *@n: the new value
  *Return: element´s count
  */
