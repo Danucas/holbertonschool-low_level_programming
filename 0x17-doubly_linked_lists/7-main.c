@@ -20,9 +20,16 @@ int main(void)
 	add_dnodeint_end(&head, 4);
 	add_dnodeint_end(&head, 98);
 	add_dnodeint_end(&head, 402);
+	add_dnodeint_end(&head, 1024);
+	add_dnodeint(&head, 1000);
+	add_dnodeint(&head, 8);
 	print_dlistint(head);
 	printf("-----------------\n");
-	insert_dnodeint_at_index(&head, 8, 4096);
+	if(!insert_dnodeint_at_index(&head, 10, 4096))
+		printf("Can't add node at index 10\n");
+	if(!insert_dnodeint_at_index(&head, 3, 3080))
+		printf("Can't add node at index 3\n");
+
 	print_dlistint(head);
 	free_dlistint(head);
 	head = NULL;
