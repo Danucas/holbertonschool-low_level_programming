@@ -81,13 +81,13 @@ char *gen_key(char *username)
 /*		printf("sum = %u\n", key_sum);*/
 		buff[b_pos] = random_c;
 		b_pos++;
-		if (key_sum > user_sum)
+		if (key_sum > user_sum || b_pos > 6)
 		{
 			free(randmlist);
 			free(buff);
 			return (gen_key(username));
 		}
-		else if (key_sum == user_sum)
+		else if (key_sum == user_sum && b_pos == 6)
 		{
 			buff[b_pos] = '\0';
 /*			printf("key_sum: %d\n", key_sum);*/
