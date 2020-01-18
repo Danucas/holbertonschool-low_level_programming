@@ -6,11 +6,15 @@
  */
 
 
-void add_hash_node(hash_node_t **top)
+hash_node_t *add_hash_node(hash_node_t **top)
 {
 	hash_node_t *t = *top;
 	hash_node_t *node = malloc(sizeof(hash_node_t));
 
+	if (!node)
+	{
+		return (NULL);
+	}
 	if (!t)
 	{
 		node->next = NULL;
@@ -29,6 +33,7 @@ void add_hash_node(hash_node_t **top)
 			t = t->next;
 		}
 	}
+	return (node);
 }
 /**
  *hash_table_create - add a new node
@@ -41,7 +46,12 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_table_t *table = malloc(sizeof(hash_table_t));
 	hash_node_t *head = NULL;
 
-	add_hash_node(&head);
+	if (!table)
+		return (NULL);
+	if (!add_hash_node(&head))
+		return (NULL);
 	table->array = &head;
 	return (table);
+	(void) size;
+	(void) pos;
 }
