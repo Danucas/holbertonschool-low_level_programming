@@ -1,0 +1,62 @@
+desc: (none)
+cmd: ./a
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=120888
+mem_heap_B=8
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=120940
+mem_heap_B=12296
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=122481
+mem_heap_B=13320
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=126300
+mem_heap_B=13320
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=peak
+n3: 13320 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 12288 0x804847E: hash_table_create (in /home/dan/holberton/holbertonschool-low_level_programming/0x1A-hash_tables/a)
+  n0: 12288 0x80484C5: main (in /home/dan/holberton/holbertonschool-low_level_programming/0x1A-hash_tables/a)
+ n1: 1024 0x40AA92C: _IO_file_doallocate (filedoalloc.c:127)
+  n1: 1024 0x40B81C5: _IO_doallocbuf (genops.c:398)
+   n1: 1024 0x40B755F: _IO_file_overflow@@GLIBC_2.1 (fileops.c:820)
+    n1: 1024 0x40B7E10: __overflow (genops.c:232)
+     n1: 1024 0x40914F2: vfprintf (vfprintf.c:1631)
+      n1: 1024 0x4096694: printf (printf.c:33)
+       n0: 1024 0x80484DB: main (in /home/dan/holberton/holbertonschool-low_level_programming/0x1A-hash_tables/a)
+ n0: 8 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=5
+#-----------
+time=126300
+mem_heap_B=12296
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
