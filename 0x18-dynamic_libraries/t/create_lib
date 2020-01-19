@@ -24,9 +24,6 @@ while read file
    else
        cp $Filename $shortname
    fi
-
-#   gcc -g -O -c "${Filename}" -o "${file}.o"
-#   ar rc libholberton.a "${file}.o"
 done
 
 echo -e "\e[36mCreating .o files\e[97m"
