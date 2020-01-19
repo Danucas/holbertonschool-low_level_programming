@@ -1,4 +1,10 @@
 #include "hash_tables.h"
+/**
+ *hash_table_get - get value at key
+ *@ht: the header
+ *@key: the key
+ *Return: value at key NULL if fails
+ */
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
@@ -11,7 +17,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	node = ht->array[index];
 	while (node)
 	{
-		if(strcmp((const char *) key, node->key) == 0)
+		if (strcmp((const char *) key, node->key) == 0)
 		{
 			return (node->value);
 		}
