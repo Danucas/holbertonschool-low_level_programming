@@ -1,21 +1,5 @@
-0x1A. C - Hash tables
- Foundations - Low-level programming & Algorithm ― Data structures and Algorithms
 
- by Julien Barbier, co-founder at Holberton School
-
- weight: 1
-
- Ongoing second chance project - started 01-17-2020, must end by 01-27-2020 (in 4 days) - you're done with 100% of tasks.
-
- QA review fully automated.
-
-In a nutshell…
-Auto QA review: 47.0/47 mandatory & 0.0/21 optional
-Altogether:  100.0%
-Mandatory: 100.0%
-Optional: 0.0%
-Calculation:  100.0% + (100.0% * 0.0%)  == 100.0%
-Resources
+## Resources
 Read or watch:
 
 What is a HashTable Data Structure - Introduction to Hash Tables , Part 0
