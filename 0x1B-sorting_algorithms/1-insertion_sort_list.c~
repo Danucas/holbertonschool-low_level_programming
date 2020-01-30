@@ -1,0 +1,42 @@
+#include "sort.h"
+/**
+ *swap - swap the values
+ *@list: the list to be sorted
+ */
+void swap(listint_t **list, int pos)
+{
+	int i = pos;
+
+	printf("puto swap\n");
+	for (i = pos; list[i]->n > list[i - 1]->n || i > 0; i--)
+	{
+
+		if (list[i]->next)
+			list[i]->next->prev = list[i]->prev;
+		if (list[i]->prev)
+			list[i]->prev->next = list[i]->next;
+		list[i]->next = list[i]->prev;
+		list[i]->prev = list[i]->prev->prev;
+		printf("puto\n");
+	}
+}
+
+/**
+ *insertion_sort_list - sort list using insertion algorithm
+ *@list: the list to be sorted
+ */
+void insertion_sort_list(listint_t **list)
+{
+	listint_t *top = *list;
+
+	for (; top; top = top->next)
+	{
+		printf("puto1\n");
+		if (top->next && top->n > top->next->n)
+		{
+			printf("puto2\n");
+			/*swap(list, i + 1);*/
+			print_list(*list);
+		}
+	}
+}
