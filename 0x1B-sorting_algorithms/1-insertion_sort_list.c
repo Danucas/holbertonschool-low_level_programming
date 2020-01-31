@@ -3,20 +3,36 @@
  *swap - swap the values
  *@ac: the list to be sorted
  */
-void swap(listint_t *ac)
+void swap(listint_t **head, listint_t *top)
 {
-	printf("puto swap\n");
-	for (; ac->prev && ac->n > ac->prev->n; ac = ac->prev)
-	{
+        listint_t *prev = top->prev, *next;
 
-		if (ac->next)
-			ac->next->prev = ac->prev;
-		if (ac->prev)
-			ac->prev->next = ac->next;
-	        ac->next = ac->prev;
-		ac->prev = ac->prev->prev;
-		printf("puto\n");
+	while (top->prev)
+	{
+		prev = top->prev;
+		if (top->prev && top->n < top->prev->n)
+		{
+			if (top->prev->prev)
+				top->prev->prev->next = top;
+			next = top->next;
+			top->prev->next = next;
+			if (next)
+				next->prev = top->prev;
+			top->next = prev;
+			if (prev)
+			{
+				top->prev = prev->prev;
+				prev->prev = top;
+			}
+			else
+				top->prev = prev;
+		}
+		else
+			break;
 	}
+	if (!top->prev)
+		*head = top;
+        (void) head;
 }
 
 /**
@@ -25,16 +41,15 @@ void swap(listint_t *ac)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *top = *list;
+	listint_t *top = (*list)->next;
 
-	for (; top; top = top->next)
+	while (top)
 	{
-		printf("puto1\n");
-		if (top->next && top->n > top->next->n)
+		if (top->prev && top->prev->n > top->n)
 		{
-			printf("puto2\n");
-			swap(top->next);
+			swap(list, top);
 			print_list(*list);
 		}
+		top = top->next;
 	}
 }
