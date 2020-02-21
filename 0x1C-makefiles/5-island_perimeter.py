@@ -14,3 +14,7 @@ def island_perimeter(grid):
                 ch_down = grid[y + 1][x]
                 count += 4 - (ch_left + ch_right + ch_up + ch_down)
     return count
+
+
+if __name__ == "__main__":
+    main()
