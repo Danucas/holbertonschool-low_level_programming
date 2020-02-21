@@ -21,5 +21,3 @@ def island_perimeter(grid):
     return count
 
 
-if __name__ == "__main__":
-    main()
