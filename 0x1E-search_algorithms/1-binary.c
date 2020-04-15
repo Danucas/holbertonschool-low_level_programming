@@ -19,8 +19,9 @@ int binary_search(int *array, size_t size, int value)
 		for (i = l; i <= h && i < size; i++)
 		{
 			printf("%d", array[i]);
-			if (i < h - 1)
-				printf(", ");
+			if (i == h || i == size -1)
+				continue;
+			printf(", ");
 		}
 		printf("\n");
 		m = (l + (h - 1)) / 2;
